@@ -1,0 +1,31 @@
+.counter {
+  padding: 50px 0px;
+}
+
+.counter__title {
+  margin-top: 0px;
+}
+
+.count__value {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 1rem;
+}
+
+.count__value--positive {
+  border: 2px solid green;
+  color: green;
+}
+
+.count__value--negative {
+  border: 2px solid red;
+  color: red;
+}
+
+.history {
+  margin-top: 30px;
+}
+
+.history__entry {
+  font-size: 1.2rem;
+}

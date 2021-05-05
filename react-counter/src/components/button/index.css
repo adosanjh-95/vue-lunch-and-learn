@@ -1,0 +1,13 @@
+.cta {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  background-color: lightblue;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cta:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
