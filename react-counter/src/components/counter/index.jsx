@@ -22,7 +22,7 @@ const Counter = () => {
   }
 
   const onInputChange = (evt) => {
-    setCount(parseInt(evt.target.value) || 0);
+    setCount(parseInt(evt.target.value));
   }
 
   const getCountValueClasses = () => {
@@ -34,32 +34,32 @@ const Counter = () => {
       classes += " count__value--negative";
     }
 
-    return classes
+    return classes;
   }
 
   return (
     <div className="counter">
       <h2 className="counter__title">Dummy Counter</h2>
       <div className="count">
-        <Button clickHandler={() => decrement()}>-</Button>
-        <input className={getCountValueClasses()} value={count} onChange={onInputChange} />
+        <Button clickHandler={() => decrement()} disabled={count <= -5}>-</Button>
+        <input className={getCountValueClasses()} value={count} onChange={onInputChange} type="number" />
         <Button clickHandler={() => increment()}>+</Button>
       </div>
      { history.length > 0
-      ? (
-          <div className="history">
-            <h3>Your history:</h3>
-            {
-              history.map((operation, index) => (
-                <p className="history__entry" key={index}>{operation}</p>
-              ))
-            }
-            <Button clickHandler={() => reset()}>
-              Reset
-            </Button>
-          </div>
-        )
-      : <p>No history found</p>
+        ? (
+            <div className="history">
+              <h3>Your history:</h3>
+              {
+                history.map((operation, index) => (
+                  <p className="history__entry" key={index}>{operation}</p>
+                ))
+              }
+              <Button clickHandler={() => reset()}>
+                Reset
+              </Button>
+            </div>
+          )
+        : <p>No history found</p>
       }
     </div>
   );
